@@ -23,22 +23,19 @@ export default function App() {
   const [movies, setMovies] = useState([])
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      const response = await fetch(
-        /**
-         * Following the TMDB API documentation,
-         * we are using the `/trending/movie/week` endpoint.
-         *
-         * https://developer.themoviedb.org/reference/discover-movie
-         */
-        `${import.meta.env.VITE_API_URL}/trending/movie/week`,
-        options,
-      )
-      // this fetches the data from the API
-      const data = await response.json()
-      setMovies(data.results)
-    }
-    fetchMovies()
+    fetch(
+      /**
+       * Following the TMDB API documentation,
+       * we are using the `/trending/movie/week` endpoint.
+       *
+       * https://developer.themoviedb.org/reference/discover-movie
+       */
+      `${import.meta.env.VITE_API_URL}/trending/movie/week`,
+      options,
+    )
+      .then((response) => response.json())
+      .then((data) => setMovies(data.results))
+      .catch((error) => console.error('Error fetching movies:', error))
   }, [])
 
   return (

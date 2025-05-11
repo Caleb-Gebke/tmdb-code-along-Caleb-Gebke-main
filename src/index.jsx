@@ -1,4 +1,4 @@
-import card from './card'
+import Card from './card'
 
 export default function MovieGrid({ movies }) {
   return (
