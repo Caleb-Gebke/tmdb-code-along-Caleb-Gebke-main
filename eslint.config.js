@@ -116,6 +116,7 @@ export default [
       'react/jsx-curly-brace-presence': ['error', { props: 'always', children: 'never' }],
       'react/jsx-fragments': ['error', 'syntax'],
       'react/jsx-no-duplicate-props': 'error',
+      'react/jsx-no-undefined': 'error',
       'react/jsx-no-useless-fragment': 'error',
       'react/jsx-pascal-case': 'error',
       'react/jsx-uses-react': 0,
